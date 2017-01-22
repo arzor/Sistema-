@@ -1,0 +1,21 @@
+.footer {
+    bottom: 0;
+    height: auto;
+    background-color: #4a5853;
+}
+
+#img-carrousel {
+    height: 450px;
+}
+
+.space {
+    margin-bottom: 5%;
+}
+
+#container {
+    display: block;
+    position:relative
+}
+.ui-autocomplete {
+    position: absolute;
+}
