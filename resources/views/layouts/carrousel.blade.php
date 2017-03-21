@@ -7,17 +7,16 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img height="450px" id="img-carrousel" src="slider1.png" alt="Puerto
-            Cabello">
+            <img height="450px" id="img-carrousel" src="8.png" alt="Logo">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Tecnicos de Confianza</h1>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Leer mas</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="/" role="button">Leer mas</a></p>
                 </div>
             </div>
         </div>
         <div class="item">
-            <img height="450px" src="slider2.jpg" alt="Puerto Cabello">
+            <img height="450px" src="slider2.jpg" alt="Calidad">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Calidad y Servicio</h1>

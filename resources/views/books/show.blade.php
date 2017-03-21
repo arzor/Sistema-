@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="isbn" class="col-sm-2 control-label">ISBN</label>
+            <label for="isbn" class="col-sm-2 control-label">hola</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="isbn" placeholder={{$book->isbn}} readonly>
             </div>

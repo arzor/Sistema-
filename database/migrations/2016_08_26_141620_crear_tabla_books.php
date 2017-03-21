@@ -19,6 +19,7 @@ class CrearTablaBooks extends Migration
             $table->string('title',200);
             $table->string('author',200);
             $table->string('publisher',200);
+            $table->string('publisher2',200);
             $table->string('image',200);
         });
     }

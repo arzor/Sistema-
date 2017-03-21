@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaTecnicos extends Migration
+class CreateContactenosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,15 @@ class CrearTablaTecnicos extends Migration
      */
     public function up()
     {
-        Schema::create('Tecnicos', function (Blueprint $table) {
+        Schema::create('contactenos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('nombre',200);
+             $table->string('municipio',200);
             $table->string('correo',200);
-            $table->string('direccion',200);
-            $table->string('contacto',200);
             $table->string('telefono',200);
-            //$table->integer('clasificacion_id');
-            //$table->foreign('clasificacion_id')->references('id')->on('clasificacion');
-
+            $table->string('direccion',200);
+            $table->string('descripcion',200);
         });
     }
 
@@ -33,6 +31,6 @@ class CrearTablaTecnicos extends Migration
      */
     public function down()
     {
-        Schema::drop('Tecnicos');
+        Schema::drop('contactenos');
     }
 }

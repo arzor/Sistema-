@@ -12,13 +12,15 @@
 */
 
 use App\User;
+use App\Solicitud;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
 Route::get('/', function () {
-    //$users = DB::table('users')->where('rol_tec', '=', 1)->get();
-    $users = User::all();
-    return view('welcome', compact('users'));
+    $users = DB::table('users')->where('rol_tec', '=', 1)->get();
+	$tecnico = DB::table('users')->where('rol_user', '=', 1)->get();
+	$solicitud = DB::table('solicituds')->get();
+    return view('welcome', compact('users','tecnico','solicitud'));
 });
 
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AjaxSearchController@autoComplete'));
@@ -29,20 +31,20 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('operador','operadorcontroller');
+Route::resource('regis','registrocontroller');
 
 Route::get('/search', 'searchcontroller@busqueda');
 
-Route::get('/solicitar', 'solicitarcontroller@solicitud');
-
-Route::get('/tecnico', 'tecnicocontroller@tecnicos');
+Route::resource('tecnico','tecnicocontroller');
 
 Route::get ( '/home', function () {
 	return view ( 'search.indexs' );
 } );
 Route::post ( '/search', function () {
 	$q = Input::get ( 'q' );
-	$user = User::where ( 'name', 'LIKE', '%' . $q . '%' )->orWhere ( 'email', 'LIKE', '%' . $q . '%' )->get ();
+	$user = User::where ( 'name','LIKE', '%' . $q . '%' )
+	->orWhere ( 'rol_tec', 'LIKE', '%' . $q . '%' )->get ();
+
 	if (count ( $user ) > 0)
 		return view ( 'search.indexs' )->withDetails ( $user )->withQuery ( $q );
 	else
@@ -50,3 +52,24 @@ Route::post ( '/search', function () {
 } );
 
 Route::resource('books','BookController');
+
+Route::resource('perfil','perfilController');
+
+Route::resource('regitec','regiteccontroller');
+
+Route::resource('regiuser','Regiuser');
+
+Route::resource('contactenos','contaccontroller');
+
+Route::get('/ayuda', function () {
+    return response()->view('ayuda');
+});
+
+Route::resource('servicio','ServicioController');
+
+
+
+
+
+
+

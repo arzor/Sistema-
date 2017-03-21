@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use App\Municipio;
 
-class operadorcontroller extends Controller
+class regiteccontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,9 @@ class operadorcontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return 'hola';
+    {   
+        $municipio=Municipio::All();
+        return view('registro.regitec',compact('municipio'));
     }
 
     /**

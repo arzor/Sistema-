@@ -86,4 +86,10 @@ class searchcontroller extends Controller
     {
         //
     }
+
+    public function search(Request $request){
+         $movies = User::where('name','like','%'.$request->name.'%')->get();
+         return \View::make('list', compact('movies'));
+        
+    }
 }

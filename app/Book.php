@@ -7,6 +7,7 @@ class Book extends Model {
         'title',
         'author',
         'publisher',
+        'publisher2',
         'image'
     ];
 }

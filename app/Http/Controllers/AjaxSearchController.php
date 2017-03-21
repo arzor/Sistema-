@@ -23,4 +23,3 @@ class AjaxSearchController extends Controller
         else
             return ['value'=>'No Result Found','id'=>''];
     }
-}

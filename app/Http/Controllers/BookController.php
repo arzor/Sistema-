@@ -14,7 +14,7 @@ class BookController extends Controller {
     */
    public function index()
    {
-      //
+      // var $id=S
         $books=Book::all();
         return view('books.index',compact('books'));
     }
@@ -89,4 +89,8 @@ public function update($id)
    Book::find($id)->delete();
    return redirect('books');
 }
+  public function __construct()
+    {
+        $this->middleware('compro');
+    }
 }

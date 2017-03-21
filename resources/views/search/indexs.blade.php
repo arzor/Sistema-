@@ -30,7 +30,7 @@
                     <tr>
                         <th>Tecnico</th>
                         <th>Correo</th>
-                        <th>Telefono</th>
+                        <th>Servicio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +38,8 @@
                     <tr>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td>{{$user->id}}</td>
+                        <td>{{$user->servicio}}</td>
+                               <td><a href="{{url('tecnico',$user->id)}}" class="btn btn-default col-lg-12 space">Ver</a></td>
                     </tr>
                     @endforeach
                 </tbody>

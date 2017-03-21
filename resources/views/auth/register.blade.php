@@ -51,6 +51,23 @@
                                 @endif
                             </div>
                         </div>
+                      <!--  <div class="form-group{{ $errors->has('muni') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Municipio </label>
+
+                            <div class="col-md-6">
+                                <select name="municipio" class="form-control" value="{{ old('email') }}">
+                                
+                                
+                               
+                                </select>
+
+                                @if ($errors->has('muni'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('muni') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>-->
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Password</label>
@@ -81,26 +98,20 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Tipo de Usuario</label>
-
-                            <div class="col-md-3">
-                                {!! Form::label('rol_user', 'Usuario') !!}
-                                {!! Form::checkbox('rol_user', '1') !!}
-                            </div>
-
+              
                             <input type='hidden' value='0' name='rol_user'>
                             <input type='hidden' value='0' name='rol_tec'>
 
+
                             <div class="col-md-3">
-                                {!! Form::label('rol_tec', 'Tecnico') !!}
-                                {!! Form::checkbox('rol_tec', '1') !!}
+                                {!! Form::hidden('rol_user', '1') !!}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-user"></i>Register
+                                    <i class="fa fa-btn fa-user"></i>Registrar
                                 </button>
                             </div>
                         </div>

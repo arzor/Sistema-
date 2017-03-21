@@ -14,8 +14,12 @@ class CrearTablaClasificacion extends Migration
     {
         Schema::create('clasificacion', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('lname');
+            $table->string('email')->unique();
+            $table->string('Servicio');
+            $table->rememberToken();
             $table->timestamps();
-            $table->string('nombre');
         });
     }
 

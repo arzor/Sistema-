@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Operador extends Model
 {
-    Protected $table = ('operadores');
+   protected $fillable=[
+        'nombre',
+        'direccion',
+        'municipio',
+        'telefono',
+        'descripcion'
+    ];
 }

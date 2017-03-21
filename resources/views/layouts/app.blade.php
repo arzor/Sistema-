@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <style>
+            @media  print {
+                .encabezado,#encabezado *{
+                    visibility: visible;
+                    position: relative !important;
+                }
+                #dataTable, #dataTable * {
+                    visibility: visible;
+                }
+                .no-pdf, .no-pdf *{
+                    display: none !important;
+                }
+                #dataTable {
+                    position: relative ;
+                    left: 0;
+                    top: 0;
+                }
+        }
+    </style>    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,11 +57,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Registrarse</a></li>
-                        <li><a href="{{ url('/tecnico') }}">Tecnicos</a></li>
-                        <li><a href="{{ url('/books') }}">Solicitar</a></li>
-                        <li><a href="{{ url('/operador/create') }}">Contactenos</a></li>
-                        <li><a href="{{ url('/search') }}">Busqueda</a></li>
+                        <li><a href="{{ url('/regis') }}">Registrarse</a></li>
+                        <li><a href="{{ url('/contactenos/create') }}">Contactenos</a></li>
+                        <li><a href="{{ url('/ayuda') }}">Ayuda</a></li>
                     @else
                         @if(Auth::user()->rol_user == 1 and Auth::user()->rol_tec == 1)
                             @include('layouts.barras.tecuser')
@@ -63,7 +80,18 @@
             </div>
         </div>
     </nav>
+<script>
+        function pdf()
+        {
+                $( "th:contains('Opciones')" ).attr("style", "display: none !important");
+                $( "th:contains('Imagen')" ).attr("style", "display: none !important");
+                window.print();
 
+                $( "th:contains('Opciones')" ).removeAttr("style");
+                $( "th:contains('Imagen')" ).removeAttr("style");
+        }
+        
+    </script>
     <div class="container">
         @yield('content')
     </div>
