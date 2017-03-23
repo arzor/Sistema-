@@ -27,7 +27,7 @@
 </select>
 </div>
    <div class="form-group">
-        {!! Form::label('especialidad', 'Servicio:') !!}
+        {!! Form::label('especialidad', 'Especialidad:') !!}
         {!! Form::text('especialidad',null,['class'=>'form-control']) !!}
     </div>
   <div class="form-group">

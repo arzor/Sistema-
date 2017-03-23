@@ -98,6 +98,7 @@
 
     @include('layouts.footer')
 
+    @yield('scripts')
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>

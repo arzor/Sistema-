@@ -21,6 +21,7 @@ class CreateSolicitudsTable extends Migration
 			$table->string('servicio')->nullable();
             $table->string('image',200);
             $table->string('informacion');
+            $table->integer('calificacion')->default(0);
             $table->timestamps();
         });
     }

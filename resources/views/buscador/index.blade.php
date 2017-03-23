@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="/search" method="POST" role="search">
+        <form action="/buscador" method="POST" role="buscador">
             {{ csrf_field() }}
             <div class="input-group">
                 <input type="text" class="form-control" name="q"
@@ -24,25 +24,23 @@
         <div class="container">
             @if(isset($details))
             <p> Los resultados de tu busqueda <b> {{ $query }} </b> son :</p>
-            <h2>Tecnicos</h2>
+            <h2>Servicios</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Apellido</th>
+                         <th>Apellido</th>
                         <th>Correo</th>
                         <th>Servicio</th>
-                        <th>Especialidad</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($details as $user)
                     <tr>
-                        <td>{{$user->nombre}}</td>
-                        <td>{{$user->apellido}}</td>
-                        <td>{{$user->correo}}</td>
+                        <td>{{$user->name}}</td>
+                         <td>{{$user->lname}}</td>
+                        <td>{{$user->email}}</td>
                         <td>{{$user->servicio}}</td>
-                        <td>{{$user->especialidad}}</td>
                                <td><a href="{{url('tecnico',$user->id)}}" class="btn btn-default col-lg-12 space">Ver</a></td>
                     </tr>
                     @endforeach

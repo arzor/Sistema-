@@ -1,5 +1,5 @@
               <div class="container">
-        <form action="/search" method="POST" role="search">
+        <form action="/buscador" method="POST" role="buscador">
             {{ csrf_field() }}
             <div class="input-group">
                 <input type="text" class="form-control" name="q"
@@ -13,11 +13,12 @@
         <div class="container">
             @if(isset($details))
             <p> Los resultados de tu busqueda <b> {{ $query }} </b> son :</p>
-            <h2>Tecnicos</h2>
+            <h2>Servicios</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Tecnico</th>
+                        <th>Nombre</th>
+                         <th>apellido</th>
                         <th>Correo</th>
                     </tr>
                 </thead>
@@ -49,7 +50,7 @@
                                 <p style="height: 150px;" class="text-justify">
                                         {!! $user->servicio !!}</p>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                   <td><a href="{{url('perfil',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Perfil</a></td>
+                                   <td><a href="{{url('versol',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Perfil</a></td>
                                 </div>
                             </div>
                         </div>

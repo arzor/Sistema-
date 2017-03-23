@@ -1,17 +1,17 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Create Boo</h1>
+    <h1>Crear Solicitud</h1>
     {!! Form::open(['url' => 'tecnico']) !!}
     <div class="form-group">
-        {!! Form::label('name', 'name:') !!}
+        {!! Form::label('nombre', 'nombre:') !!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('lname', 'lname:') !!}
+        {!! Form::label('apellido', 'apellido:') !!}
         {!! Form::text('lname',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('email', 'email:') !!}
+        {!! Form::label('correo', 'correo:') !!}
         {!! Form::text('email',null,['class'=>'form-control']) !!}
     </div>
 

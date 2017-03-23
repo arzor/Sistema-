@@ -12,11 +12,13 @@
 */
 
 use App\User;
+use App\Servicio;
 use App\Solicitud;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Auth;
 
-Route::get('/', function () {
+Route::get('/', function () {	
     $users = DB::table('users')->where('rol_tec', '=', 1)->get();
 	$tecnico = DB::table('users')->where('rol_user', '=', 1)->get();
 	$solicitud = DB::table('solicituds')->get();
@@ -40,15 +42,16 @@ Route::resource('tecnico','tecnicocontroller');
 Route::get ( '/home', function () {
 	return view ( 'search.indexs' );
 } );
+
 Route::post ( '/search', function () {
 	$q = Input::get ( 'q' );
-	$user = User::where ( 'name','LIKE', '%' . $q . '%' )
-	->orWhere ( 'rol_tec', 'LIKE', '%' . $q . '%' )->get ();
+	$user = Servicio::where ( 'servicio','LIKE', '%' . $q . '%' )
+	->orWhere ( 'nombre', 'LIKE', '%' . $q . '%' )->get ();
 
 	if (count ( $user ) > 0)
 		return view ( 'search.indexs' )->withDetails ( $user )->withQuery ( $q );
 	else
-		return view ( 'search.indexs' )->withMessage ( 'No Details found. Try to search again !' );
+		return view ( 'search.indexs' )->withMessage ( 'No se consiguieron resultados. Intente mas tarde !' );
 } );
 
 Route::resource('books','BookController');
@@ -67,9 +70,19 @@ Route::get('/ayuda', function () {
 
 Route::resource('servicio','ServicioController');
 
+Route::resource('versol','VersolController');
 
+Route::post ( '/buscador', function () {
+	$q = Input::get ( 'q' );
+	$user = Solicitud::where ( 'servicio','LIKE', '%' . $q . '%' )
+	->orWhere ( 'name', 'LIKE', '%' . $q . '%' )->get ();
 
+	if (count ( $user ) > 0)
+		return view ( 'buscador.index' )->withDetails ( $user )->withQuery ( $q );
+	else
+		return view ( 'buscador.index' )->withMessage ( 'No Details found. Try to search again !' );
+} );
 
-
+Route::post('calificar', "tecnicocontroller@calificar");
 
 

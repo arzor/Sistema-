@@ -7,6 +7,7 @@ use App\Municipio;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Request;
+use Auth;
 
 class tecnicocontroller extends Controller
 {
@@ -17,6 +18,7 @@ class tecnicocontroller extends Controller
     */
    public function index()
    {
+        //if (Auth::user()-> ...)
         $solicitud=Solicitud::all();
         return view('tecnico.index',compact('solicitud'));
     }
@@ -97,5 +99,16 @@ class tecnicocontroller extends Controller
     public function __construct()
     {
         $this->middleware('compro');
+    }
+
+    public function calificar(){
+        $id = Request::input('id');
+        $solicitud = Solicitud::find($id);
+
+        $solicitud->calificacion = Request::input('calificacion');
+
+        $solicitud->update();
+
+        return redirect()->route('tecnico.index');
     }
 }
