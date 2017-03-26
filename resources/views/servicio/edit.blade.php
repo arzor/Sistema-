@@ -2,6 +2,7 @@
 @section('content')
     <h1>Actualizar Datos</h1>
     {!! Form::model($servicio,['method' => 'PATCH','route'=>['servicio.update',$servicio->id]]) !!}
+    <div class="col-md-6">
     <div class="form-group">
         {!! Form::label('nombre', 'Nombre:') !!}
         {!! Form::text('nombre',null,['class'=>'form-control']) !!}
@@ -35,11 +36,11 @@
         {!! Form::file('image',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
-           <a href="{{ url('/servicio')}}" class="btn btn-primary">Atras</a>
+    <a href="{{ url('/servicio')}}" class="btn btn-default glyphicon glyphicon-arrow-left">Atras</a>
+        {!! Form::submit('Actualizar', ['class' => 'btn btn-default glyphicon glyphicon-refresh']) !!}
     </div>
 
-     
+    </div> 
  
     {!! Form::close() !!}
 @stop

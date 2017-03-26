@@ -16,7 +16,7 @@ use App\Servicio;
 use App\Solicitud;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
-use Auth;
+
 
 Route::get('/', function () {	
     $users = DB::table('users')->where('rol_tec', '=', 1)->get();
@@ -80,9 +80,11 @@ Route::post ( '/buscador', function () {
 	if (count ( $user ) > 0)
 		return view ( 'buscador.index' )->withDetails ( $user )->withQuery ( $q );
 	else
-		return view ( 'buscador.index' )->withMessage ( 'No Details found. Try to search again !' );
+		return view ( 'buscador.index' )->withMessage ( 'No se consiguieron resultados. Intente mas tarde !' );
 } );
 
 Route::post('calificar', "tecnicocontroller@calificar");
+
+Route::resource('vista', "VistaController");
 
 

@@ -2,13 +2,14 @@
 @section('content')
     <h1>Servicio</h1>
     {!! Form::open(['url' => 'servicio']) !!}
+    <div class="col-md-6">
     <div class="form-group">
         {!! Form::label('nombre', 'nombre:') !!}
         {!! Form::text('nombre',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('apellido', 'apellido:') !!}
-        {!! Form::text('apellido',null,['class'=>'form-control']) !!}
+        {!! Form::text('apellido',null,['class'=>'form-control ']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('correo', 'correo:') !!}
@@ -40,14 +41,22 @@
 </div>
 
     <div class="form-group">
-        {!! Form::label('Image', 'Image:') !!}
+        {!! Form::label('Image', 'Imagen:') !!}
         {!! Form::file('image',null,['class'=>'form-control']) !!}
     </div>
-    <div class="form-group">
-        {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
+
+<div class="form-group">
+        {!! Form::submit('Crear', ['class' => 'btn btn-default glyphicon glyphicon-arrow-left']) !!}
     </div>
-    <div class="form-group">
-        <a href="{{ url('/servicio')}}" class="btn btn-primary">Atras</a>
+
+
+      <div class="form-group">
+        <a href="{{ url('/servicio')}}" class="btn btn-default glyphicon glyphicon-arrow-left">Atras</a>
     </div>
+
+    </div>
+
+    
+  
     {!! Form::close() !!}
 @stop

@@ -5,7 +5,7 @@
     </a>
 
     <ul class="dropdown-menu" role="menu">
-        <li><a href="/"><span class="glyphicon glyphicon-user"></span>Perfil</a></li>
+        <li><a href="/vista"><span class="glyphicon glyphicon-user"></span>Perfil</a></li>
         <li><a href="/tecnico"><span class="glyphicon glyphicon-book"></span>solicitudes</a></li>
           <li><a href="/"><span class="glyphicon glyphicon-wrench"></span>opciones</a></li>
           <li><a href="/ayuda"><span class="glyphicon glyphicon-exclamation-sign"></span>Ayuda</a></li>

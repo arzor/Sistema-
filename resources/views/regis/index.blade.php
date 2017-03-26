@@ -11,7 +11,7 @@
                         {!! csrf_field() !!}
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                              <a class="btn btn-default col-lg-12" type="submit"><span class="glyphicon glyphicon-wrench"></span><a href="{{ url('/regitec') }}">Tecnico</a></a>
+                              <button class="btn btn-default col-lg-12" type="submit"><span class="glyphicon glyphicon-wrench"></span><a href="{{ url('/regitec') }}">Tecnico</a></button>
                             </div>
                         <div class="col-md-6 col-md-offset-4">
                               <a class="btn btn-default col-lg-12" type="submit"><span class="glyphicon glyphicon-user"></span><a href="{{ url('/regiuser') }}">Usuario</a></a>

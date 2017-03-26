@@ -43,7 +43,7 @@
                         <td>{{$user->correo}}</td>
                         <td>{{$user->servicio}}</td>
                         <td>{{$user->especialidad}}</td>
-                               <td><a href="{{url('tecnico',$user->id)}}" class="btn btn-default col-lg-12 space">Ver</a></td>
+                               <td><a href="{{url('perfil',$user->id)}}" class="btn btn-default glyphicon glyphicon-zoom-in">Ver</a></td>
                     </tr>
                     @endforeach
                 </tbody>

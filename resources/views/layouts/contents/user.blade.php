@@ -50,7 +50,8 @@
                                 <h3>{!! $user->name !!}</h3>
                                 <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 150px;" class="text-justify">
                                     {!! $user->email !!}
-                                    {!! $user->municipio !!}</h3>   
+                                    
+                                    {!! $user->municipio !!}   
                                      </p>
                                 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -83,7 +84,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <h4>{!! Auth::user()->name !!} {!! Auth::user()->lname !!}</h4>
                         <h4>{!! Auth::user()->email !!}</h4>
-                        <button class="btn btn-default col-lg-12" type="submit"><span class="glyphicon glyphicon-user"></span><a href="{{ url('/perfil') }}"></a></button>
+                        <td class="no-sort no-click no-pdf"><a href="{{ url('/vista')}}" class="btn btn-default glyphicon glyphicon-user no-pdf">Perfil</a></td>
                     </div>
                 </div>
             </div>

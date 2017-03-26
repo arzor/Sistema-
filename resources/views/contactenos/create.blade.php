@@ -15,8 +15,9 @@
                                 </div>
                             </div>
                         </div>
-    <h1>Ingrese Datos</h1>
+    <h1>Rellene el formulario</h1>
     {!! Form::open(['url' => 'contactenos']) !!}
+    <div class="col-md-6">
     <div class="form-group">
         {!! Form::label('nombre', '*Nombre (Campo obligatorio):') !!}
         {!! Form::text('nombre',null,['class'=>'form-control']) !!}
@@ -45,10 +46,11 @@
         {!! Form::label('descripcion', 'descripcion:') !!}
         {!! Form::textarea('descripcion',null,['class'=>'form-control']) !!}
     </div>
-    <div class="form-group">
-        {!! Form::submit('enviar', ['class' => 'btn btn-primary form-control']) !!}
-         <input class="form-button" type="reset" value="Limpiar">
+    
+    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-phone-alt"></span> Enviar</button>
+                     
+    <button class="btn btn-default" type="reset"><span class="glyphicon glyphicon-remove"></span> Limpiar</button>
     </div>
-
+</div>
     {!! Form::close() !!}
 @stop

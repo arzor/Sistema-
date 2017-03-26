@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<div class="col-md-6">
     <h1>Crear Solicitud</h1>
     {!! Form::open(['url' => 'tecnico']) !!}
     <div class="form-group">
@@ -38,10 +39,9 @@
         {!! Form::file('image',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Save', ['class' => 'btn btn-primary form-control']) !!}
+     <a href="{{ url('/tecnico')}}" class="btn btn-default glyphicon glyphicon-arrow-left">Atras</a>
+        {!! Form::submit('Crear', ['class' => 'btn btn-default glyphicon glyphicon-arrow-left']) !!}
     </div>
-    <div class="form-group">
-        <a href="{{ url('/tecnico')}}" class="btn btn-primary">Atras</a>
     </div>
     {!! Form::close() !!}
 @stop
