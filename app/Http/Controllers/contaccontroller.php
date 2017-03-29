@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Request;
+use Illuminate\Support\Facades\Request;
 use App\Municipio;
 use App\Contactenos;
 
@@ -15,8 +15,7 @@ class contaccontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         return view('contactenos.index');
     }
 
@@ -25,8 +24,7 @@ class contaccontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         $municipio=Municipio::All();
         return view('contactenos.create',compact('municipio'));
 
@@ -34,59 +32,12 @@ class contaccontroller extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * @internal param \Illuminate\Http\Request $request
      */
-    public function store()
-    {
-   $contactenos=Request::all();
-   Contactenos::create($contactenos);
-   return redirect('contactenos/create'); 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function store() {
+       $contactenos=Request::all();
+       Contactenos::create($contactenos);
+       return redirect('contactenos/create');
     }
 }

@@ -37,30 +37,53 @@ Route::resource('regis','registrocontroller');
 
 Route::get('/search', 'searchcontroller@busqueda');
 
+/**
+ * Rutas para el registro de usuarios trabajado
+ * en grupos para maximizar la agrupación de elementos
+ * y no tener un desastre */
+
+Route::group(['prefix' => 'sign'], function (){
+   Route::get('user', [
+       'as' => 'user.register',
+       'uses' => 'Regiuser@index'
+   ]);
+
+   Route::post('sign-up-user', [
+       'as' => 'sign-user',
+       'uses' => 'Regiuser@store'
+   ]);
+
+   Route::get('tec', [
+       'as' => 'tec.register',
+       'uses' => 'regiteccontroller@index'
+   ]);
+
+    Route::post('sign-up-tec', [
+        'as' => 'sign-tec',
+        'uses' => 'regiteccontroller@store'
+    ]);
+});
+
 Route::resource('tecnico','tecnicocontroller');
 
-Route::get ( '/home', function () {
-	return view ( 'search.indexs' );
+Route::get ('/home', function () {
+	return view('search.indexs');
 } );
 
-Route::post ( '/search', function () {
-	$q = Input::get ( 'q' );
-	$user = Servicio::where ( 'servicio','LIKE', '%' . $q . '%' )
-	->orWhere ( 'nombre', 'LIKE', '%' . $q . '%' )->get ();
+Route::post ('/search', function () {
+	$q = Input::get ('q');
+	$user = Servicio::where('servicio','LIKE', '%' . $q . '%')
+	->orWhere('nombre', 'LIKE', '%' . $q . '%')->get();
 
-	if (count ( $user ) > 0)
-		return view ( 'search.indexs' )->withDetails ( $user )->withQuery ( $q );
+	if (count($user) > 0)
+		return view('search.indexs')->withDetails($user)->withQuery($q);
 	else
-		return view ( 'search.indexs' )->withMessage ( 'No se consiguieron resultados. Intente mas tarde !' );
+		return view('search.indexs')->withMessage('No se consiguieron resultados. Intente mas tarde !');
 } );
 
 Route::resource('books','BookController');
 
 Route::resource('perfil','perfilController');
-
-Route::resource('regitec','regiteccontroller');
-
-Route::resource('regiuser','Regiuser');
 
 Route::resource('contactenos','contaccontroller');
 

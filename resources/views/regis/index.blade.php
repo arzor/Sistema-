@@ -4,17 +4,23 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Como Desea registrarse</div>
+            <div class="panel panel-info">
+                <div class="panel-heading">¿Cómo Desea registrarse?</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST">
                         {!! csrf_field() !!}
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                              <button class="btn btn-default col-lg-12" type="submit"><span class="glyphicon glyphicon-wrench"></span><a href="{{ url('/regitec') }}">Tecnico</a></button>
+                            <div class="col-md-6">
+                              <a href="{{ route('tec.register') }}" role="button" class="btn btn-info col-lg-12" type="submit">
+                                  <h2 class="glyphicon glyphicon-wrench"></h2>
+                                  <h3>Técnico</h3>
+                              </a>
                             </div>
-                        <div class="col-md-6 col-md-offset-4">
-                              <a class="btn btn-default col-lg-12" type="submit"><span class="glyphicon glyphicon-user"></span><a href="{{ url('/regiuser') }}">Usuario</a></a>
+                        <div class="col-md-6">
+                              <a href="{{ route('user.register') }}" role="button" class="btn btn-info col-lg-12" type="submit">
+                                  <h2 class="glyphicon glyphicon-user"></h2>
+                                  <h3>Usuario</h3>
+                              </a>
                         </div>
                         </div>
                     </form>

@@ -35,12 +35,19 @@
         {!! Form::label('Image', 'Image:') !!}
         {!! Form::file('image',null,['class'=>'form-control']) !!}
     </div>
-    <div class="form-group">
-    <a href="{{ url('/servicio')}}" class="btn btn-default glyphicon glyphicon-arrow-left">Atras</a>
-        {!! Form::submit('Actualizar', ['class' => 'btn btn-default glyphicon glyphicon-refresh']) !!}
+ <div class="form-group">
+     <a href="{{ url('/servicio')}}" class="btn btn-default glyphicon glyphicon-arrow-left">Atras</a>
+             {!! Form::open(['onsubmit' => 'return onSubmit();', 'method' => 'UPDATE', 'route'=>['servicio.edit', $servicio->id]]) !!}
+             {!! Form::submit('Actualizar', ['class' => 'btn btn-default glyphicon glyphicon-refresh']) !!}
+             {!! Form::close() !!}
+</div>
     </div>
+ <script>
 
-    </div> 
- 
-    {!! Form::close() !!}
+function onSubmit(){
+        return confirm("Confirmar actualizacion?");
+    }
+
+</script>
+{!! Form::close() !!}
 @stop

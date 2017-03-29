@@ -1,15 +1,5 @@
-              <div class="container">
-        <form action="/buscador" method="POST" role="buscador">
-            {{ csrf_field() }}
-            <div class="input-group">
-                <input type="text" class="form-control" name="q"
-                    placeholder="Buscar"> <span class="input-group-btn">
-                    <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-            </div>
-        </form>
+<div class="container">
+  
         <div class="container">
             @if(isset($details))
             <p> Los resultados de tu busqueda <b> {{ $query }} </b> son :</p>
@@ -44,14 +34,17 @@
                             <img src="{!! asset('img/sample.png') !!}" alt="">
                             <div class="caption">
                                 <h3>{!! $user->name !!}</h3>
-                                <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 150px;" class="text-justify">
+                                <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 20px;" class="text-justify">
+                                <h4>Correo</h4>
                                         {!! $user->email !!}</p>
-                                </div>
-                                <p style="height: 150px;" class="text-justify">
+                               <h4>Servicio</h4>
                                         {!! $user->servicio !!}</p>
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                   <td><a href="{{url('versol',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Perfil</a></td>
+                               <p style="height: 20px;" class="text-justify">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                   <td><a href="{{url('versol',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Solicitud</a></td>
+                                  </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

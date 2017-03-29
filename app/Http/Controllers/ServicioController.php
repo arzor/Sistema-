@@ -4,44 +4,44 @@ namespace App\Http\Controllers;
 
 use App\Servicio;
 use App\Municipio;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Request;
+use App\Solicitud;
+use Illuminate\Support\Facades\Request;
 
-class ServicioController extends Controller
-{
-   /**
+class ServicioController extends Controller {
+
+    public function __construct()
+    {
+        $this->middleware('compro');
+    }
+
+    /**
     * Display a listing of the resource.
     *
     * @return Response
     */
-   public function index()
-   {
+   public function index() {
         $servicio=Servicio::all();
         return view('servicio.index',compact('servicio'));
-    }
+   }
    /**
     * Show the form for creating a new resource.
     *
     * @return Response
     */
-   public function create()
-   {
-    $municipio=Municipio::All();
-       return view('servicio.create',compact('municipio'));
+   public function create() {
+        $municipio=Municipio::All();
+        return view('servicio.create',compact('municipio'));
    }
    /**
     * Store a newly created resource in storage.
     *
     * @return Response
     */
-  public function store()
-{
-
-  $servicio=Request::all();
-   Servicio::create($servicio);
-   return redirect('servicio');
-}
+    public function store() {
+        $servicio=Request::all();
+        Servicio::create($servicio);
+        return redirect('servicio');
+    }
 
    /**
     * Display the specified resource.
@@ -49,10 +49,9 @@ class ServicioController extends Controller
     * @param  int  $id
     * @return Response
     */
-   public function show($id)
-   {
-  $servicio=Servicio::find($id);
-   return view('servicio.show',compact('servicio'));
+   public function show($id) {
+        $servicio=Servicio::find($id);
+        return view('servicio.show',compact('servicio'));
    }
 
    /**
@@ -61,41 +60,41 @@ class ServicioController extends Controller
     * @param  int  $id
     * @return Response
     */
-   public function edit($id)
-   {
-   $municipio=Municipio::All();
-   $servicio=Servicio::find($id);
-   return view('servicio.edit',compact('servicio','municipio'));
-
+   public function edit($id) {
+       $municipio=Municipio::All();
+       $servicio=Servicio::find($id);
+       return view('servicio.edit',compact('servicio','municipio'));
    }
+
    /**
     * Update the specified resource in storage.
     *
     * @param  int  $id
     * @return Response
     */
-   public function update($id)
-{
-   //
-   $servicioUpdate=Request::all();
-   $servicio=Servicio::find($id);
-   $servicio->update($servicioUpdate);
-   return redirect('servicio');
-}
+   public function update($id) {
+       $servicioUpdate=Request::all();
+       $servicio=Servicio::find($id);
+       $servicio->update($servicioUpdate);
+       return redirect('servicio');
+    }
    /**
     * Remove the specified resource from storage.
     *
     * @param  int  $id
     * @return Response
     */
-   public function destroy($id)
-   {
-         Solicitud::find($id)->delete();
-   return redirect('servicio');
+   public function destroy($id) {
+       Servicio::find($id)->delete();
+       return redirect('servicio');
    }
 
-    public function __construct()
-    {
-        $this->middleware('compro');
-    }
+   public function calificar(){
+        $calificacion=Request::all();
+        Calificacion::create($calificacion);
+        return redirect('servicio');
+        }
+
+
 }
+
