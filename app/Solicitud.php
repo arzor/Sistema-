@@ -13,6 +13,7 @@ class Solicitud extends Model {
         'servicio',
         'informacion',
         'municipio',
+        'calificacion',
         'image'
     ];
 }

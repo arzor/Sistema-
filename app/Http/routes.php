@@ -37,7 +37,10 @@ Route::resource('regis','registrocontroller');
 
 Route::get('/search', 'searchcontroller@busqueda');
 
+<<<<<<< HEAD
 Route::get('/buscador', 'solicitarcontroller@busqueda');
+=======
+>>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
 /**
  * Rutas para el registro de usuarios trabajado
  * en grupos para maximizar la agrupación de elementos
@@ -68,6 +71,7 @@ Route::group(['prefix' => 'sign'], function (){
 Route::resource('tecnico','tecnicocontroller');
 
 Route::get ('/home', function () {
+<<<<<<< HEAD
   return view('search.indexs');
 } );
 
@@ -80,6 +84,20 @@ Route::post ('/search', function () {
     return view('search.indexs')->withDetails($user)->withQuery($q);
   else
     return view('search.indexs')->withMessage('No se consiguieron resultados. Intente mas tarde !');
+=======
+	return view('search.indexs');
+} );
+
+Route::post ('/search', function () {
+	$q = Input::get ('q');
+	$user = Servicio::where('servicio','LIKE', '%' . $q . '%')
+	->orWhere('nombre', 'LIKE', '%' . $q . '%')->get();
+
+	if (count($user) > 0)
+		return view('search.indexs')->withDetails($user)->withQuery($q);
+	else
+		return view('search.indexs')->withMessage('No se consiguieron resultados. Intente mas tarde !');
+>>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
 } );
 
 Route::resource('books','BookController');

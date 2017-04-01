@@ -13,7 +13,10 @@ return array(
     'App\\Contactenos' => $baseDir . '/app/Contactenos.php',
     'App\\Events\\Event' => $baseDir . '/app/Events/Event.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
+=======
+>>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
     'App\\Http\\Controllers\\AjaxSearchController' => $baseDir . '/app/Http/Controllers/AjaxSearchController.php',
     'App\\Http\\Controllers\\Auth\\AuthController' => $baseDir . '/app/Http/Controllers/Auth/AuthController.php',
     'App\\Http\\Controllers\\Auth\\PasswordController' => $baseDir . '/app/Http/Controllers/Auth/PasswordController.php',
@@ -1172,6 +1175,7 @@ return array(
     'League\\Flysystem\\FileNotFoundException' => $vendorDir . '/league/flysystem/src/FileNotFoundException.php',
     'League\\Flysystem\\Filesystem' => $vendorDir . '/league/flysystem/src/Filesystem.php',
     'League\\Flysystem\\FilesystemInterface' => $vendorDir . '/league/flysystem/src/FilesystemInterface.php',
+    'League\\Flysystem\\FilesystemNotFoundException' => $vendorDir . '/league/flysystem/src/FilesystemNotFoundException.php',
     'League\\Flysystem\\Handler' => $vendorDir . '/league/flysystem/src/Handler.php',
     'League\\Flysystem\\MountManager' => $vendorDir . '/league/flysystem/src/MountManager.php',
     'League\\Flysystem\\NotSupportedException' => $vendorDir . '/league/flysystem/src/NotSupportedException.php',
@@ -1348,6 +1352,10 @@ return array(
     'Monolog\\Processor\\UidProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
     'Monolog\\Processor\\WebProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
     'Monolog\\Registry' => $vendorDir . '/monolog/monolog/src/Monolog/Registry.php',
+    'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
+    'PHPUnit\\Framework\\BaseTestListener' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
+    'PHPUnit\\Framework\\TestCase' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
+    'PHPUnit\\Framework\\TestListener' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/TestListener.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
     'PHPUnit_Extensions_PhptTestCase' => $vendorDir . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -1675,6 +1683,7 @@ return array(
     'PHP_Token_NEW' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_NS_C' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_NS_SEPARATOR' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'PHP_Token_NULLSAFE_OBJECT_OPERATOR' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_NUM_STRING' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_OBJECT_CAST' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_OBJECT_OPERATOR' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',

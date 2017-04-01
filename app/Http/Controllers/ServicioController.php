@@ -6,8 +6,11 @@ use App\Servicio;
 use App\Municipio;
 use App\Solicitud;
 use Illuminate\Support\Facades\Request;
+<<<<<<< HEAD
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+=======
+>>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
 
 class ServicioController extends Controller {
 
@@ -91,7 +94,11 @@ class ServicioController extends Controller {
        return redirect('servicio');
    }
 
+<<<<<<< HEAD
    public function calificar2(){
+=======
+   public function calificar(){
+>>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
         $calificacion=Request::all();
         Calificacion::create($calificacion);
         return redirect('servicio');

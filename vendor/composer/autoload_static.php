@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInitae582196b23e572ec11c90f8600094f9
+=======
+class ComposerStaticInitecd819b94f5cbcc34a27ec41874aa650
+>>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -83,6 +87,7 @@ class ComposerStaticInitae582196b23e572ec11c90f8600094f9
         ),
         'C' => 
         array (
+            'Cron\\' => 5,
             'Collective\\Html\\' => 16,
             'ClassPreloader\\' => 15,
             'Carbon\\' => 7,
@@ -216,6 +221,10 @@ class ComposerStaticInitae582196b23e572ec11c90f8600094f9
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Cron\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
+        ),
         'Collective\\Html\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravelcollective/html/src',
@@ -267,13 +276,6 @@ class ComposerStaticInitae582196b23e572ec11c90f8600094f9
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
             ),
         ),
-        'C' => 
-        array (
-            'Cron' => 
-            array (
-                0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src',
-            ),
-        ),
     );
 
     public static $classMap = array (
@@ -284,7 +286,10 @@ class ComposerStaticInitae582196b23e572ec11c90f8600094f9
         'App\\Contactenos' => __DIR__ . '/../..' . '/app/Contactenos.php',
         'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
+=======
+>>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
         'App\\Http\\Controllers\\AjaxSearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/AjaxSearchController.php',
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
         'App\\Http\\Controllers\\Auth\\PasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordController.php',
@@ -1443,6 +1448,7 @@ class ComposerStaticInitae582196b23e572ec11c90f8600094f9
         'League\\Flysystem\\FileNotFoundException' => __DIR__ . '/..' . '/league/flysystem/src/FileNotFoundException.php',
         'League\\Flysystem\\Filesystem' => __DIR__ . '/..' . '/league/flysystem/src/Filesystem.php',
         'League\\Flysystem\\FilesystemInterface' => __DIR__ . '/..' . '/league/flysystem/src/FilesystemInterface.php',
+        'League\\Flysystem\\FilesystemNotFoundException' => __DIR__ . '/..' . '/league/flysystem/src/FilesystemNotFoundException.php',
         'League\\Flysystem\\Handler' => __DIR__ . '/..' . '/league/flysystem/src/Handler.php',
         'League\\Flysystem\\MountManager' => __DIR__ . '/..' . '/league/flysystem/src/MountManager.php',
         'League\\Flysystem\\NotSupportedException' => __DIR__ . '/..' . '/league/flysystem/src/NotSupportedException.php',
@@ -1619,6 +1625,10 @@ class ComposerStaticInitae582196b23e572ec11c90f8600094f9
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+        'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
+        'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
+        'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
+        'PHPUnit\\Framework\\TestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestListener.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -1946,6 +1956,7 @@ class ComposerStaticInitae582196b23e572ec11c90f8600094f9
         'PHP_Token_NEW' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_C' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_SEPARATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_NULLSAFE_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NUM_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -3037,10 +3048,17 @@ class ComposerStaticInitae582196b23e572ec11c90f8600094f9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInitae582196b23e572ec11c90f8600094f9::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitae582196b23e572ec11c90f8600094f9::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitae582196b23e572ec11c90f8600094f9::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitae582196b23e572ec11c90f8600094f9::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInitecd819b94f5cbcc34a27ec41874aa650::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitecd819b94f5cbcc34a27ec41874aa650::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitecd819b94f5cbcc34a27ec41874aa650::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitecd819b94f5cbcc34a27ec41874aa650::$classMap;
+>>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
 
         }, null, ClassLoader::class);
     }

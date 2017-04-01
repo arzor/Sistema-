@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaClasificacion extends Migration
+class CreateCalificacionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,12 @@ class CrearTablaClasificacion extends Migration
      */
     public function up()
     {
-        Schema::create('clasificacion', function (Blueprint $table) {
+        Schema::create('calificacion', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('lname');
-            $table->string('email')->unique();
-            $table->string('Servicio');
-            $table->rememberToken();
+            $table->string('nombre');
+            $table->string('reputacion');
+            $table->string('informacion');
+            $table->integer('calificacion')->default(0);
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CrearTablaClasificacion extends Migration
      */
     public function down()
     {
-        Schema::drop('clasificacion');
+        Schema::drop('calificacion');
     }
 }

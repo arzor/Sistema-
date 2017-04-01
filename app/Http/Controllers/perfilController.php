@@ -53,7 +53,11 @@ class perfilController extends Controller {
     */
    public function show($id)
    {
+<<<<<<< HEAD
    $solicituds=Solicitud::find($id);
+=======
+    $solicituds=Solicitud::find($id);
+>>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
    return view('perfil.show',compact('solicituds'));
    }
 
