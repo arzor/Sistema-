@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Municipio extends Model
-{
-Protected $table = 'municipio';
+class Municipio extends Model {
+
+    Protected $table = 'municipio';
 
 }
-

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Operador extends Model
-{
-   protected $fillable=[
+class Operador extends Model {
+
+   protected $fillable = [
         'nombre',
         'direccion',
         'municipio',

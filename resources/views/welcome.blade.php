@@ -11,7 +11,7 @@
     @elseif(Auth::user()->rol_user == 1)
       @include('layouts.contents.user')
     @elseif(Auth::user()->rol_user == 0 and Auth::user()->rol_tec == 0)
-      @include('layouts.contents.admin')
+      @include('admin.index')
     @else
       @include('layouts.contents.notecuser')    
     @endif

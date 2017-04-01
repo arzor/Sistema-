@@ -68,8 +68,12 @@
       </div>
       <form method="POST" action="{{ url('calificar') }}">
       {{ csrf_field() }}
-      <input type="hidden" name="id" id="id_solicitud" value="" />
+      <input type="hidden" name="calificacion" id="calificacion" value="" />
       <div class="modal-body">
+        <div class="form-group">
+        {!! Form::label('nombre', 'nombre:') !!}
+        {!! Form::text('nombre',null,['class'=>'form-control']) !!}
+    </div>
         <div class="form-group">
             <label class="col-md-2">Calificar</label>
             <select name="calificacion" class="input-md">
@@ -81,11 +85,30 @@
             </select>
         </div>
 
-      </div>
-      <div class="modal-footer">
+<input type="hidden" name="reputacion" id="reputacion" value="" />
+      <div class="modal-body">
+        <div class="form-group">
+            <label class="col-md-3">Reputacion</label>
+            <select name="reputacion" class="input-md">
+                <option value="pesima">pesima</option>
+                <option value="mala">mala</option>
+                <option value="regular">regular</option>
+                <option value="buena">buena</option>
+                <option value="excelente">excelente</option>
+            </select>
+        </div>
+
+            <div class="form-group">
+            {!! Form::label('informacion', 'informacion:') !!}
+            {!! Form::textarea('informacion',null,['class'=>'form-control']) !!}
+            </div>
+        </div>
+        <div class="modal-footer">
         <button type="submit" class="btn btn-default glyphicon glyphicon-ok">Calificar</button>
         <button type="button" class="btn btn-default glyphicon glyphicon-remove" data-dismiss="modal">Cerrar</button>
       </div>
+      </div>
+      
       </form>
     </div>
 

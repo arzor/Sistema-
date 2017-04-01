@@ -1,4 +1,7 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
+
 use App\Solicitud;
 use App\Municipio;
 use App\Http\Requests;
@@ -6,6 +9,11 @@ use App\Http\Controllers\Controller;
 use Request;
 
 class VersolController extends Controller {
+
+    public function __construct()
+    {
+        $this->middleware('compro');
+    }
    /**
     * Display a listing of the resource.
     *
@@ -13,8 +21,8 @@ class VersolController extends Controller {
     */
    public function index()
    {
-    $solicitud=Solicitud::all();
-        return view('versol.index',compact('solicituds'));
+        $solicitud=Solicitud::all();
+        return view('versol.index',compact('solicitud'));
    }
    /**
     * Show the form for creating a new resource.
@@ -78,8 +86,5 @@ public function update($id)
 {
 
 }
- public function __construct()
-    {
-        $this->middleware('compro');
-    }
+
 }

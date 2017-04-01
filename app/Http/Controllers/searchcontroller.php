@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Servicio;
+use App\Municipio;
+use App\Solicitud;
 use App\Http\Requests;
-
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Request;
 class searchcontroller extends Controller
 {
   /**
@@ -15,7 +17,9 @@ class searchcontroller extends Controller
      */
     public function index()
     {
-        return 'hola';
+        $solicitud=Solicitud::all();
+        $municipio=Municipio::All();
+        return view('search.indexs', compact('solicitud','municipio'));
     }
 
     /**
@@ -37,59 +41,22 @@ class searchcontroller extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-
-        
+          
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+  public function Aceptar(){
+
+        $id = Request::input('id');
+
+        $servicio = Servicio::find($id);
+
+        $servicio->estatus = Request::input('estatus');
+
+        $servicio->id_user = Request::input('id_user');
+
+        $servicio->update();
+
+        return view('search.indexs');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function search(Request $request){
-         $movies = User::where('name','like','%'.$request->name.'%')->get();
-         return \View::make('list', compact('movies'));
-        
-    }
 }

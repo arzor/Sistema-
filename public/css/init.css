@@ -30,3 +30,7 @@ align-content: center;
 .ui-autocomplete {
     position: absolute;
 }
+
+.titulo {
+    color: #000;
+}

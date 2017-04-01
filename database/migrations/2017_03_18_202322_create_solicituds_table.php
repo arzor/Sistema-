@@ -18,10 +18,11 @@ class CreateSolicitudsTable extends Migration
             $table->string('lname');
             $table->string('email');
             $table->string('municipio');
-			$table->string('servicio')->nullable();
+			$table->string('servicio');
             $table->string('image',200);
             $table->string('informacion');
-            $table->integer('calificacion')->default(0);
+            $table->string('estatus');
+            $table->string('id_user');
             $table->timestamps();
         });
     }

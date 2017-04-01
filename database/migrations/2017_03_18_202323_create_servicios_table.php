@@ -23,6 +23,8 @@ class CreateServiciosTable  extends Migration
             $table->string('telefono',200);
             $table->string('image',200);
             $table->string('municipio',200);
+            $table->string('estatus',200);
+            $table->string('id_user',200);
         });
     }
 

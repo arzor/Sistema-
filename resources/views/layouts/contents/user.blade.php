@@ -1,16 +1,6 @@
   <div class="row">
   <div class="container">
-        <form action="/search" method="POST" role="search">
-            {{ csrf_field() }}
-            <div class="input-group">
-                <input type="text" class="form-control" name="q"
-                    placeholder="Buscar"> <span class="input-group-btn">
-                    <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-            </div>
-        </form>
+  
         <div class="container">
             @if(isset($details))
             <p> Los resultados de tu busqueda <b> {{ $query }} </b> son :</p>
@@ -55,7 +45,7 @@
                                      </p>
                                 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                  <td><a href="{{url('perfil',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Perfil</a></td>
+                                  <td><a href="{{url('verservicio',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Perfil</a></td>
                                 </div>
                                    <div class="col-lg-12 col-md-12 col-sm-12">
                                     <button class="btn btn-default col-lg-12 space" type="submit"><span class="glyphicon glyphicon-thumbs-up"></span> Aceptar Solicitud</button>

@@ -9,17 +9,20 @@ use App\Http\Requests;
 
 class AjaxSearchController extends Controller
 {
-    public function autocomplete(Request $request){
-        $query = $request->get('term','');
+    public function autocomplete(Request $request)
+    {
+        $query = $request->get('term', '');
 
-        $users = User::where('name','LIKE','%'.$query.'%')->get();
+        $users = User::where('name', 'LIKE', '%' . $query . '%')->get();
 
-        $data=array();
+        $data = array();
         foreach ($users as $user) {
-            $data[]=array('value'=>$user->name,'id'=>$user->id);
+            $data[] = array('value' => $user->name, 'id' => $user->id);
         }
-        if(count($data))
+        if (count($data))
             return $data;
         else
-            return ['value'=>'No Result Found','id'=>''];
+            return ['value' => 'No se encuentran resultados', 'id' => ''];
     }
+
+}
