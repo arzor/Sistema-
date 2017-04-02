@@ -50,7 +50,7 @@ class VerservicioController extends Controller {
     */
    public function show($id)
    {
-    $servicios=Servicio::find($id);
+  $servicios=Servicio::find($id);
    return view('verservicio.show',compact('servicios'));
    }
 

@@ -23,6 +23,7 @@ class CreateSolicitudsTable extends Migration
             $table->string('informacion');
             $table->string('estatus');
             $table->string('id_user');
+            $table->string('telefono');
             $table->timestamps();
         });
     }

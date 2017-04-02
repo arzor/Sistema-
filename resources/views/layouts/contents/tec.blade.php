@@ -31,7 +31,7 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="thumbnail">
                            <h3>Solicitudes</h3>
-                            <img src="{!! asset('img/sample.png') !!}" alt="">
+                            <img src="{!! asset('img/user.png') !!}" alt="">
                             <div class="caption">
                                 <h3>{!! $user->name !!}</h3>
                                 <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 20px;" class="text-justify">
@@ -50,15 +50,15 @@
                     </div>
                 @endforeach
 
-                @foreach($users as $user) 
+                @foreach($aceptados as $user) 
                           <div class="col-lg-4 col-md-4">
                         <div class="thumbnail">
-                           <h3>Solicitudes Aceptadas</h3>
+                           <h3>Servicios Aceptados</h3>
                             <img src="{!! asset('img/sample.png') !!}" alt="">
                             <div class="caption">
-                                <h3>{!! $user->name !!}</h3>
+                                <h3>{!! $user->nombre !!}</h3>
                                 <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 150px;" class="text-justify">
-                                        {!! $user->email !!}</p>
+                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <button class="btn btn-default col-lg-12 space" type="submit"><span class="glyphicon glyphicon-user"></span> Perfil</button>

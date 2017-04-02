@@ -73,13 +73,10 @@
       <input type="hidden" name="calificacion" id="calificacion" value="" />
       <div class="modal-body">
         <div class="form-group">
-
         {!! Auth::user()->name !!} 
-
         {!! Form::label('nombre', 'nombre:') !!}
         {!! Form::text('nombre',null,['class'=>'form-control']) !!}
-
-    </div>
+        </div>
              <div class="form-group">
             <label class="col-md-2">Calificar</label>
             <select name="calificacion" class="input-md">

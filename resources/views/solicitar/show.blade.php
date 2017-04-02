@@ -6,7 +6,7 @@
         <div class="form-group">
             <label for="image" class="col-sm-2 control-label">Cover</label>
             <div class="col-sm-2">
-                <img src="{{asset('img/'.$solicituds->image.'.jpg')}}" height="180" width="150" class="img-rounded">
+                <img src="{!! asset('img/user.png') !!}" height="180" width="150" class="img-rounded">
             </div>
         </div>
         <div class="form-group">

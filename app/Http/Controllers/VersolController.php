@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Servicio;
 use App\Solicitud;
 use App\Municipio;
 use App\Http\Requests;
@@ -86,5 +86,13 @@ public function update($id)
 {
 
 }
+
+
+   public function aceptarsolicitudusuario(){
+
+        $calificacion=Request::all();
+        Calificacion::create($calificacion);
+        return redirect('servicio');
+        }
 
 }

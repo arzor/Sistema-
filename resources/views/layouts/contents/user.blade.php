@@ -32,24 +32,22 @@
        <hr>
         <div class="panel panel-default">
             <div class="panel-body">
-                @foreach($users as $user) 
+                @foreach($calificacio as $user) 
                     <div class="col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="{!! asset('img/ray.jpg') !!}" alt="">
+                            <img src="{!! asset('img/slider3.jpg') !!}" alt="">
                             <div class="caption">
-                                <h3>{!! $user->name !!}</h3>
+                                <h3>{!! $user->nombre !!}</h3>
+                                <h3>{!! $user->calificacion !!}</h3>
+                                <h3>{!! $user->reputacion !!}</h3>
                                 <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 150px;" class="text-justify">
-                                    {!! $user->email !!}
-                                    
-                                    {!! $user->municipio !!}   
+                                <h3>{!! $user->informacion !!}</h3>
                                      </p>
                                 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                  <td><a href="{{url('verservicio',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Perfil</a></td>
+                                  <td><a href="{{url('perfil',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Perfil</a></td>
                                 </div>
-                                   <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <button class="btn btn-default col-lg-12 space" type="submit"><span class="glyphicon glyphicon-thumbs-up"></span> Aceptar Solicitud</button>
-                                </div>
+                       
                                 </div> <!-- aqui-->
                             </div>
                         </div>

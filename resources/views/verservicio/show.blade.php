@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Perfil Del Tecnico</h1>
+    <h1>Servicio Del Tecnico</h1>
 
     <form class="form-horizontal">
         <div class="form-group">
-            <label for="image" class="col-sm-2 control-label">Cover</label>
+            <label for="image" class="col-sm-2 control-label"></label>
             <div class="col-sm-2">
-                <img src="{{asset('img/'.$servicios->image.'.jpg')}}" height="180" width="150" class="img-rounded">
+                <img src="{{asset('img/slider3.jpg')}}" height="180" width="150" class="img-rounded">
             </div>
         </div>
         <div class="form-group">
@@ -40,14 +40,14 @@
             </div>
         </div>
          <div class="form-group">
-            <label for="author" class="col-sm-2 control-label">informacion</label>
+            <label for="author" class="col-sm-2 control-label">Especialidad</label>
             <div class="col-sm-2">
-                <input type="text" class="form-control" id="author" placeholder={{$servicios->especialidad}} readonly>
+                <input type="text" class="form-control" id="especialidad" placeholder={{$servicios->especialidad}} readonly>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <td class="no-sort no-click no-pdf"><a href="{{ url('/')}}" class="btn btn-default glyphicon glyphicon-arrow-left no-pdf">Atras</a></td>
+                <td class="no-sort no-click no-pdf"><a href="{{ url('/search')}}" class="btn btn-default glyphicon glyphicon-arrow-left no-pdf">Atras</a></td>
             </div>
         </div>
     </form>

@@ -23,8 +23,8 @@
          <th>Servicio</th>
          <th>informacion</th>
          <th>Municipio</th>
-         <th>Imagen</th>
          <th>Fecha</th>
+         <th>Imagen</th>
          <th colspan="4">Opciones</th>
      </tr>
      </thead>
@@ -36,7 +36,7 @@
              <td>{{ $user->email }}</td>
              <td>{{ $user->servicio }}</td>
              <td>{{ $user->informacion }}</td>
-               <td>{{ $user->municipio }}</td>
+             <td>{{ $user->municipio }}</td>
              <td>{{ $user->created_at }}</td>
             <td class="no-sort no-click no-pdf"><img src="{{asset('img/'.$user->image.'.jpg')}}" height="35" width="30"></td>
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onVerDetallesClick(this);" class="btn btn-default glyphicon glyphicon-zoom-in">Ver</a></td>

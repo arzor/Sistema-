@@ -14,6 +14,7 @@ class Solicitud extends Model {
         'informacion',
         'municipio',
         'calificacion',
+        'telefono',
         'image'
     ];
 }

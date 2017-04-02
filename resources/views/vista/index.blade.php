@@ -11,7 +11,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <a href="#" class="thumbnail">
+                        <a href="/" class="thumbnail">
                             <img src="{{ asset('img/ray.jpg') }}" alt="...">
                         </a>
                     </div>
@@ -20,8 +20,6 @@
                         <h4>Correo:<h4>{!! Auth::user()->email !!}</h4></h4>
                         <h4>Municipio:<h4>{!! Auth::user()->municipio !!}</h4></h4>
                         <h4>Telefono:<h4>{!! Auth::user()->cell_number!!}</h4></h4>
-                         <td class="no-sort no-click no-pdf"><a href="{{ url('/')}}" class="btn btn-default glyphicon glyphicon-arrow-left no-pdf">Atras
-                         </a></td>
                           @foreach ($users as $user)
                         <td class="no-sort no-click no-pdf"><a href="{{route('vista.edit',$user->id)}}" class="btn btn-warning">Actualizar</a></td>
                          @endforeach
@@ -29,7 +27,7 @@
                 </div>
             </div>
         </div>
+          <td class="no-sort no-click no-pdf"><a href="{{ url('/')}}" class="btn btn-default glyphicon glyphicon-arrow-left no-pdf">Atras</a></td>
     </div>
-
   </div>
   @endsection

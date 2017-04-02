@@ -27,11 +27,16 @@ class VistaController extends Controller {
    }
       public function update($id)
     {
-       //
        $usersUpdate=Request::all();
        $users=User::find($id);
        $users->update($usersUpdate);
        return redirect('vista');
     }
+
+     public function calificar(){
+        $calificacion=Request::all();
+        Calificacion::create($calificacion);
+        return redirect('tecnico');
+        }
 }
 

@@ -30,15 +30,16 @@
                     <tr>
                         <th>Nombre</th>
                          <th>Apellido</th>
-                        <th>Correo</th>
-                        <th>Servicio</th>
+                         <th>Correo</th>
+                         <th>Servicio</th>
+                         <th colspan="2">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($details as $user)
                     <tr>
                         <td>{{$user->name}}</td>
-                         <td>{{$user->lname}}</td>
+                        <td>{{$user->lname}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->servicio}}</td>
                                <td><a href="{{url('solicitar',$user->id)}}" class="btn btn-default glyphicon glyphicon-zoom-in">Ver</a></td>
@@ -64,7 +65,7 @@
       <form method="POST" action="{{ url('aceptacion') }}">
       {{ csrf_field() }}
       <h4 class="modal-title">¿Desea Aceptar la solicitud?</h4>
-      <input type="hidden" name="id" id="id_solicitud" value="" />
+      <input type="hidden" name="id" id="id_solicitud" value="1" />
            <div class="form-group">         
                 <input type='hidden' value='0' name='estatus'>
                 <div class="col-md-3">

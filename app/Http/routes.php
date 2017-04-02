@@ -14,6 +14,7 @@
 use App\User;
 use App\Servicio;
 use App\Solicitud;
+use App\Calificacion;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
@@ -22,12 +23,12 @@ Route::get('/', function () {
   $users = DB::table('users')->where('rol_tec', '=', 1)->get();
   $tecnico = DB::table('users')->where('rol_user', '=', 1)->get();
   $solicitud = DB::table('solicituds')->get();
-    return view('welcome', compact('users','tecnico','solicitud'));
+  $calificacio = DB::table('calificacions')->where('calificacion', '=', 5)->get();
+  $aceptados = DB::table('solicituds')->where('estatus', '=', 1)->get();
+  return view('welcome', compact('users','tecnico','solicitud','calificacio','aceptados'));
 });
 
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AjaxSearchController@autoComplete'));
-
-Route::get('hola', 'VistaController@holamundo');
 
 Route::auth();
 
@@ -35,8 +36,9 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('regis','registrocontroller');
 
-Route::get('/search', 'searchcontroller@busqueda');
+Route::resource('book','BookController');
 
+Route::get('/search', 'searchcontroller@busqueda');
 
 Route::get('/buscador', 'solicitarcontroller@busqueda');
 
@@ -69,24 +71,6 @@ Route::group(['prefix' => 'sign'], function (){
 
 Route::resource('tecnico','tecnicocontroller');
 
-Route::get ('/home', function () {
-
-  return view('search.indexs');
-} );
-
-Route::post ('/search', function () {
-  $q = Input::get ('q');
-  $user = Servicio::where('servicio','LIKE', '%' . $q . '%')
-  ->orWhere('nombre', 'LIKE', '%' . $q . '%')->get();
-
-  if (count($user) > 0)
-    return view('search.indexs')->withDetails($user)->withQuery($q);
-  else
-    return view('search.indexs')->withMessage('No se consiguieron resultados. Intente mas tarde !');
-
-	return view('search.indexs');
-} );
-
 Route::post ('/search', function () {
 	$q = Input::get ('q');
 	$user = Servicio::where('servicio','LIKE', '%' . $q . '%')
@@ -99,7 +83,17 @@ Route::post ('/search', function () {
 
 } );
 
-Route::resource('books','BookController');
+Route::post ( '/buscador', function () {
+  $q = Input::get ( 'q' );
+  $user = Solicitud::where ( 'servicio','LIKE', '%' . $q . '%' )
+  ->orWhere ( 'name', 'LIKE', '%' . $q . '%' )->get ();
+
+  if (count ( $user ) > 0)
+    return view ( 'buscador.index' )->withDetails ( $user )->withQuery ( $q );
+  else
+    return view ( 'buscador.index' )->withMessage ( 'No se consiguieron resultados. Intente mas tarde !' );
+} );
+
 
 Route::resource('perfil','perfilController');
 
@@ -112,17 +106,6 @@ Route::get('/ayuda', function () {
 Route::resource('servicio','ServicioController');
 
 Route::resource('versol','VersolController');
-
-Route::post ( '/buscador', function () {
-  $q = Input::get ( 'q' );
-  $user = Solicitud::where ( 'servicio','LIKE', '%' . $q . '%' )
-  ->orWhere ( 'name', 'LIKE', '%' . $q . '%' )->get ();
-
-  if (count ( $user ) > 0)
-    return view ( 'buscador.index' )->withDetails ( $user )->withQuery ( $q );
-  else
-    return view ( 'buscador.index' )->withMessage ( 'No se consiguieron resultados. Intente mas tarde !' );
-} );
 
 Route::post('calificar', "tecnicocontroller@calificar");
 
@@ -137,7 +120,6 @@ Route::resource('vista', "VistaController");
 Route::resource('solicitar', "solicitarcontroller");
 
 Route::resource('verservicio', "VerservicioController");
-
 
 /**
  * Rutas de Admnistrador

@@ -16,6 +16,10 @@
         {!! Form::text('email',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
+        {!! Form::label('telefono', 'Telefono:') !!}
+        {!! Form::text('telefono',null,['class'=>'form-control']) !!}
+    </div>
+      <div class="form-group">
         {!! Form::label('servicio', 'Servicio:') !!}
         {!! Form::text('servicio',null,['class'=>'form-control']) !!}
     </div>
