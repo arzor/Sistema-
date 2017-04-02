@@ -1,9 +1,6 @@
     <li>
-<<<<<<< HEAD
     <form action="/buscador" method="POST" role="search">
-=======
     <form action="/search" method="POST" role="search">
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
         {{ csrf_field() }}
         <div class="form-group">
             <input style="width:300px;" id="search" type="text" class="form-control" placeholder="Realice su Consulta aqui">

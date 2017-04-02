@@ -44,7 +44,7 @@ class searchcontroller extends Controller
           
     }
 
-<<<<<<< HEAD
+
   public function Aceptar(){
 
         $id = Request::input('id');
@@ -58,12 +58,7 @@ class searchcontroller extends Controller
         $servicio->update();
 
         return view('search.indexs');
-=======
-    public function search(Request $request){
-         $movies = User::where('name','like','%'.$request->name.'%')->get();
-         return \View::make('list', compact('movies'));
-        
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
-    }
+
+}
 
 }

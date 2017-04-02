@@ -66,7 +66,7 @@
       <h4 class="modal-title">¿Desea Aceptar la solicitud?</h4>
       <input type="hidden" name="id" id="id_solicitud" value="" />
            <div class="form-group">         
-                <input type='hidden' value='0' name='calificacion'>
+                <input type='hidden' value='0' name='estatus'>
                 <div class="col-md-3">
                 {!! Form::hidden('estatus', 'aceptada') !!}
                 {!! Form::hidden ('id_user', Auth::user()->name) !!}

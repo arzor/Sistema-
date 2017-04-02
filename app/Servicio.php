@@ -13,6 +13,7 @@ class Servicio extends Model {
         'servicio',
         'especialidad',
         'municipio',
+        'telefono',
         'image'
     ];
 }

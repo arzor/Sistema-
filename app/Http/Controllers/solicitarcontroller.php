@@ -45,15 +45,8 @@ class solicitarcontroller extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
+
         dd($request->all()); 
     }
-
-    
-=======
-        dd($request->all());
-
-        
-    }
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
+  
 }

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Input;
 
 
 Route::get('/', function () { 
-    $users = DB::table('users')->where('rol_tec', '=', 1)->get();
+  $users = DB::table('users')->where('rol_tec', '=', 1)->get();
   $tecnico = DB::table('users')->where('rol_user', '=', 1)->get();
   $solicitud = DB::table('solicituds')->get();
     return view('welcome', compact('users','tecnico','solicitud'));
@@ -37,10 +37,9 @@ Route::resource('regis','registrocontroller');
 
 Route::get('/search', 'searchcontroller@busqueda');
 
-<<<<<<< HEAD
+
 Route::get('/buscador', 'solicitarcontroller@busqueda');
-=======
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
+
 /**
  * Rutas para el registro de usuarios trabajado
  * en grupos para maximizar la agrupación de elementos
@@ -71,7 +70,7 @@ Route::group(['prefix' => 'sign'], function (){
 Route::resource('tecnico','tecnicocontroller');
 
 Route::get ('/home', function () {
-<<<<<<< HEAD
+
   return view('search.indexs');
 } );
 
@@ -84,7 +83,7 @@ Route::post ('/search', function () {
     return view('search.indexs')->withDetails($user)->withQuery($q);
   else
     return view('search.indexs')->withMessage('No se consiguieron resultados. Intente mas tarde !');
-=======
+
 	return view('search.indexs');
 } );
 
@@ -97,7 +96,7 @@ Route::post ('/search', function () {
 		return view('search.indexs')->withDetails($user)->withQuery($q);
 	else
 		return view('search.indexs')->withMessage('No se consiguieron resultados. Intente mas tarde !');
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
+
 } );
 
 Route::resource('books','BookController');

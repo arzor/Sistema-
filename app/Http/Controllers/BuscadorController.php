@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Solicitud;
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Request;
 
 class BuscadorController extends Controller
 {
@@ -15,7 +16,7 @@ class BuscadorController extends Controller
      */
     public function index()
     {
-        return 'hola';
+    
     }
 
     /**
@@ -37,12 +38,22 @@ class BuscadorController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        
     }
 
-    public function search(Request $request){
-         $movies = User::where('name','like','%'.$request->name.'%')->get();
-         return \View::make('list', compact('movies'));
-        
+  
+      public function aceptacion(){
+
+        $id = Request::input('id');
+
+        $solicitud = Solicitud::find($id);
+
+        $solicitud ->estatus = Request::input('estatus');
+
+        $solicitud ->id_user = Request::input('id_user');
+
+        $solicitud->update();
+
+        return view('buscador.index');
     }
 }

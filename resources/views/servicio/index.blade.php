@@ -41,11 +41,7 @@
             <td class="no-sort no-click no-pdf"><img src="{{asset('img/'.$user->image.'.jpg')}}" height="35" width="30"></td>
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onVerDetallesClick(this);" class="btn btn-default glyphicon glyphicon-zoom-in">Ver</a></td>
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onActualizarClick(this);" class="btn btn-default glyphicon glyphicon-refresh">Actualizar</a></td>
-<<<<<<< HEAD
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onCalificar2Click(this);" data-toggle="modal" data-target="#modalCalificar" class="btn btn-default glyphicon glyphicon-check">Calificar</a></td>
-=======
-            <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onCalificarClick(this);" data-toggle="modal" data-target="#modalCalificar" class="btn btn-default glyphicon glyphicon-check">Calificar</a></td>
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
             <td class="no-sort no-click no-pdf">
              {!! Form::open(['onsubmit' => 'return onDeleteSubmit();', 'method' => 'DELETE', 'route'=>['servicio.destroy', $user->id]]) !!}
              {!! Form::submit('Elminar', ['class' => 'btn btn-default glyphicon glyphicon-trash']) !!}
@@ -68,21 +64,21 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Califique al Usuario</h4>
       </div>
-<<<<<<< HEAD
+
       <form method="POST" action="{{ url('calificar2') }}">
-=======
+
       <form method="POST" action="{{ url('calificar') }}">
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
+
       {{ csrf_field() }}
       <input type="hidden" name="calificacion" id="calificacion" value="" />
       <div class="modal-body">
         <div class="form-group">
-<<<<<<< HEAD
+
         {!! Auth::user()->name !!} 
-=======
+
         {!! Form::label('nombre', 'nombre:') !!}
         {!! Form::text('nombre',null,['class'=>'form-control']) !!}
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
+
     </div>
              <div class="form-group">
             <label class="col-md-2">Calificar</label>
@@ -116,11 +112,11 @@
         <div class="modal-footer">
         <button type="submit" class="btn btn-default glyphicon glyphicon-ok">Calificar</button>
         <button type="button" class="btn btn-default glyphicon glyphicon-remove" data-dismiss="modal">Cerrar</button>
-<<<<<<< HEAD
+
         </div>
-=======
+
       </div>
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
+
       </div>
   </div>
 </div>
@@ -144,11 +140,8 @@
         return confirm("Confirmar eliminacion?");
     }
 
-<<<<<<< HEAD
+
     function onCalificar2Click(element){
-=======
-    function onCalificarClick(element){
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
         document.getElementById("id_solicitud").value = element.getAttribute("idtecnico");
     }
 

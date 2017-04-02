@@ -31,7 +31,7 @@
         {!! Form::label('especialidad', 'Especialidad:') !!}
         {!! Form::text('especialidad',null,['class'=>'form-control']) !!}
     </div>
-      <div class="form-group">
+   <div class="form-group">
         {!! Form::label('telefono', 'Telefono:') !!}
         {!! Form::text('telefono',null,['class'=>'form-control']) !!}
     </div>
