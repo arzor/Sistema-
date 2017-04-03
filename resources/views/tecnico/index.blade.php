@@ -38,7 +38,7 @@
              <td>{{ $user->informacion }}</td>
              <td>{{ $user->municipio }}</td>
              <td>{{ $user->created_at }}</td>
-            <td class="no-sort no-click no-pdf"><img src="{{asset('img/'.$user->image.'.jpg')}}" height="35" width="30"></td>
+            <td class="no-sort no-click no-pdf"><img src="{{asset('img/'.$user->image.'')}}" height="35" width="30"></td>
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onVerDetallesClick(this);" class="btn btn-default glyphicon glyphicon-zoom-in">Ver</a></td>
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onActualizarClick(this);" class="btn btn-default glyphicon glyphicon-refresh">Actualizar</a></td>
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onCalificarClick(this);" data-toggle="modal" data-target="#modalCalificar" class="btn btn-default glyphicon glyphicon-check">Calificar</a></td>

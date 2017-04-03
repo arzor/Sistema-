@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <a href="/" class="thumbnail">
-                            <img src="{{ asset('img/ray.jpg') }}" alt="...">
+                               <img src="{{asset('img/'.Auth::user()->image.'')}}" height="180" width="150" class="img-rounded">
                         </a>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-12">

@@ -38,7 +38,7 @@
              <td>{{ $user->especialidad }}</td>
                <td>{{ $user->municipio }}</td>
              <td>{{ $user->created_at }}</td>
-            <td class="no-sort no-click no-pdf"><img src="{{asset('img/'.$user->image.'.jpg')}}" height="35" width="30"></td>
+            <td class="no-sort no-click no-pdf"><img src="{{asset('img/'.$user->image.'')}}" height="35" width="30"></td>
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onVerDetallesClick(this);" class="btn btn-default glyphicon glyphicon-zoom-in">Ver</a></td>
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onActualizarClick(this);" class="btn btn-default glyphicon glyphicon-refresh">Actualizar</a></td>
             <td class="no-sort no-click no-pdf"><a href="#" idtecnico="{{ $user->id }}" onclick="onCalificar2Click(this);" data-toggle="modal" data-target="#modalCalificar" class="btn btn-default glyphicon glyphicon-check">Calificar</a></td>
@@ -73,7 +73,6 @@
       <input type="hidden" name="calificacion" id="calificacion" value="" />
       <div class="modal-body">
         <div class="form-group">
-        {!! Auth::user()->name !!} 
         {!! Form::label('nombre', 'nombre:') !!}
         {!! Form::text('nombre',null,['class'=>'form-control']) !!}
         </div>

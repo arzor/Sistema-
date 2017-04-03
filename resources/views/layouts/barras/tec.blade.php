@@ -4,7 +4,7 @@
         {{ csrf_field() }}
         <div class="form-group">
             <input style="width:300px;" id="search" type="text" class="form-control" placeholder="Realice su Consulta aqui">
-        </div>
+        
         <div id="container">
         </div>
         <button type="submit" class="btn btn-default col-lg-12 col-md-12 col-sm-12"><span class="glyphicon glyphicon-search"></span> Buscar</button>

@@ -31,8 +31,9 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="thumbnail">
                            <h3>Solicitudes</h3>
-                            <img src="{!! asset('img/user.png') !!}" alt="">
                             <div class="caption">
+                             <img src="{{asset('img/'.$user->image.'')}}" height="180" width="150" class="img-rounded">
+                               <h4>Nombre:</h4>
                                 <h3>{!! $user->name !!}</h3>
                                 <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 20px;" class="text-justify">
                                 <h4>Correo</h4>

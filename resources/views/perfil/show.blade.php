@@ -27,27 +27,21 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="author" class="col-sm-2 control-label">municipio</label>
+            <label for="author" class="col-sm-2 control-label">Municipio</label>
             <div class="col-sm-2">
                 <input type="text" class="form-control" id="municipio" placeholder={{$users->municipio}} readonly>
             </div>
         </div>
         <div class="form-group">
-            <label for="informacion" class="col-sm-2 control-label">telefono</label>
+            <label for="informacion" class="col-sm-2 control-label">Telefono</label>
             <div class="col-sm-2">
                 <input type="text" class="form-control" id="informacion" placeholder={{$users->telefono}} readonly>
             </div>
         </div>
           <div class="form-group">
-            <label for="author" class="col-sm-2 control-label">servicio</label>
+            <label for="author" class="col-sm-2 control-label">Especialidad</label>
             <div class="col-sm-2">
-                <input type="text" class="form-control" id="servicio" placeholder={{$users->servicio}} readonly>
-            </div>
-        </div>
-               <div class="form-group">
-            <label for="author" class="col-sm-2 control-label">informacion</label>
-            <div class="col-sm-2">
-                <input type="text" class="form-control" id="informacion" placeholder={{$users->informacion}} readonly>
+                <input type="text" class="form-control" id="servicio" placeholder={{$users->especialidad}} readonly>
             </div>
         </div>
         <div class="form-group">

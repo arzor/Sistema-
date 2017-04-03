@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
 			$table->integer('rol_user')->default('0');
 			$table->integer('rol_tec')->default('0');
 			$table->string('cell_number')->nullable();
+            $table->string('especialidad');
             $table->rememberToken();
             $table->timestamps();
         });

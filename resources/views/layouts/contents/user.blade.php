@@ -28,7 +28,7 @@
         </div>
 </div> <br>
     <div class="col-sm-8 col-md-8 col-lg-8">
-       <h2>Tecnicos</h2>
+       <h2>Tecnicos Recomendados</h2>
        <hr>
         <div class="panel panel-default">
             <div class="panel-body">
@@ -37,13 +37,16 @@
                         <div class="thumbnail">
                             <img src="{!! asset('img/slider3.jpg') !!}" alt="">
                             <div class="caption">
+                            <h4>Nombre:</h4>
                                 <h3>{!! $user->nombre !!}</h3>
+                            <h4>Calificacion:</h4>  
                                 <h3>{!! $user->calificacion !!}</h3>
+                            <h4>Reputacion:</h4>
                                 <h3>{!! $user->reputacion !!}</h3>
-                                <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 150px;" class="text-justify">
+                            <h4>Informacion:</h4>
                                 <h3>{!! $user->informacion !!}</h3>
-                                     </p>
-                                
+                                <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 15px;" class="text-justify">
+                                </p>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                   <td><a href="{{url('perfil',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Perfil</a></td>
                                 </div>

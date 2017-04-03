@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Solicitud;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,21 +14,17 @@ class AjaxSearchController extends Controller
     {
         $query = $request->get('term', '');
 
-        $users = User::where('name', 'LIKE', '%' . $query . '%')->get();
+        $Solicitud = Solicitud::where('name', 'LIKE', '%' . $query . '%')->get();
 
         $data = array();
-        foreach ($users as $user) {
+        foreach ($Solicitud as $user) {
             $data[] = array('value' => $user->name, 'id' => $user->id);
         }
         if (count($data))
             return $data;
         else
-<<<<<<< HEAD
-            return ['value' => 'No se encuentran resultados', 'id' => ''];
-    }
 
-=======
-            return ['value' => 'No Result Found', 'id' => ''];
+            return ['value' => 'No se encuentran resultados', 'id' => ''];
     }
 
      public function search(Request $request){
@@ -36,6 +33,4 @@ class AjaxSearchController extends Controller
         
     }
 
-
->>>>>>> 1452ea292672dfc07d9bfc74e7215ffffa5736ee
 }
