@@ -11,6 +11,7 @@ class Calificacion extends Model {
         'nombre',
         'reputacion',
         'informacion',
-        'calificacion'
+        'calificacion',
+        'image'
     ];
 }

@@ -45,7 +45,7 @@
                                 <h3>{!! $user->reputacion !!}</h3>
                             <h4>Informacion:</h4>
                                 <h3>{!! $user->informacion !!}</h3>
-                                <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 15px;" class="text-justify">
+                                <div style="overflow-y: hidden; overflow-style: auto"><p style="height: 150px;" class="text-justify">
                                 </p>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                   <td><a href="{{url('perfil',$user->id)}}" class="btn btn-default col-lg-12 space"><span class="glyphicon glyphicon-eye-open"></span> Ver Perfil</a></td>

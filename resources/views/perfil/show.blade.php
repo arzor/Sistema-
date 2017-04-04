@@ -5,7 +5,7 @@
          <div class="form-group">
             <label for="image" class="col-sm-2 control-label">Tecnico</label>
             <div class="col-sm-10">
-                <img src="{!! asset('img/slider3.jpg') !!}" height="180" width="150" class="img-rounded">
+                <img src="{{asset('img/'.$users->image.'')}}" height="180" width="150">
             </div>
         </div>
         <div class="form-group">
