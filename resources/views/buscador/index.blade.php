@@ -69,8 +69,12 @@
            <div class="form-group">         
                 <input type='hidden' value='0' name='estatus'>
                 <div class="col-md-3">
+                {!! Form::hidden('activo', '1') !!}
                 {!! Form::hidden('estatus', 'aceptada') !!}
                 {!! Form::hidden ('id_user', Auth::user()->name) !!}
+                {!! Form::hidden ('correo',  Auth::user()->email) !!}
+                {!! Form::hidden ('imagen',  Auth::user()->image) !!}
+                {!! Form::hidden ('cell_number', Auth::user()->cell_number) !!}
                 </div>
                 </div>
                  <div class="modal-footer">

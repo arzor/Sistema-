@@ -12,6 +12,7 @@
             <div class="panel-body">
  <h1>Solicitar Servicio</h1>
  <a href="{{url('/tecnico/create')}}" class="btn btn-default no-pdf glyphicon glyphicon-plus no-pdf">Solicitar</a>
+  <a href="{{url('/solicitudaceptada')}}" class="btn btn-default no-pdf glyphicon glyphicon-bookmark no-pdf">Aceptadas</a>
  <button  onClick ="pdf();" class="btn btn-default no-pdf glyphicon glyphicon-print">Reporte</button>
  <hr>
  <table class="table table-striped table-bordered table-hover">

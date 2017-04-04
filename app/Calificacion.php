@@ -12,6 +12,8 @@ class Calificacion extends Model {
         'reputacion',
         'informacion',
         'calificacion',
+        'email',
+        'cell_number',
         'image'
     ];
 }

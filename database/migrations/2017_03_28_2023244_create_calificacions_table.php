@@ -18,6 +18,9 @@ class CreateCalificacionsTable extends Migration
             $table->string('reputacion');
             $table->string('informacion');
             $table->integer('calificacion')->default(0);
+            $table->string('cell_number');
+            $table->string('email');
+            $table->string('image');
             $table->timestamps();
         });
     }

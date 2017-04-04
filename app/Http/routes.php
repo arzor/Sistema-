@@ -21,11 +21,17 @@ use Illuminate\Support\Facades\Input;
 
 Route::get('/', function () { 
   $users = DB::table('users')->where('rol_tec', '=', 1)->get();
+
   $tecnico = DB::table('users')->where('rol_user', '=', 1)->get();
+
   $solicitud = DB::table('solicituds')->get();
+
   $calificacio = DB::table('calificacions')->where('calificacion', '=', 5)->get();
-  $aceptados = DB::table('solicituds')->where('estatus', '=', 1)->get();
-  return view('welcome', compact('users','tecnico','solicitud','calificacio','aceptados'));
+
+
+ 
+
+  return view('welcome', compact('users','tecnico','solicitud','calificacio','aceptados','activos'));
 });
 
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AjaxSearchController@autoComplete'));
@@ -132,3 +138,4 @@ Route::group(['prefix' => 'admin'], function () {
    ]);
 });
 
+Route::resource('solicitudaceptada','SolicitudAceptadaController');

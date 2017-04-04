@@ -48,9 +48,17 @@ class BuscadorController extends Controller
 
         $solicitud= Solicitud::find($id);
 
+        $solicitud->activo = Request::input('activo');
+
         $solicitud->estatus = Request::input('estatus');
 
         $solicitud->id_user = Request::input('id_user');
+
+        $solicitud->cell_number = Request::input('cell_number');
+
+        $solicitud->correo = Request::input('correo');
+
+        $solicitud->imagen = Request::input('imagen');
 
         $solicitud->update();
 

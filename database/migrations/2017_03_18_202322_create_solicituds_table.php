@@ -22,8 +22,11 @@ class CreateSolicitudsTable extends Migration
             $table->string('image',200);
             $table->string('informacion');
             $table->string('estatus');
-            $table->string('id_user');
             $table->string('telefono');
+            $table->string('id_user');
+            $table->integer('cell_number')->default(0);
+            $table->string('correo');
+            $table->string('activo');
             $table->timestamps();
         });
     }
