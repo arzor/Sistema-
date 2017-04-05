@@ -78,8 +78,8 @@
                 </div>
                 </div>
                  <div class="modal-footer">
-        <button type="submit" class="btn btn-success">Aceptar</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Rechazar</button>
+        <button type="submit" class="glyphicon glyphicon-ok">Aceptar</button>
+        <button type="button" class="glyphicon glyphicon-remove" data-dismiss="modal">Rechazar</button>
       </div>
             </div>
      

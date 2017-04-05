@@ -27,6 +27,7 @@ class CreateSolicitudsTable extends Migration
             $table->integer('cell_number')->default(0);
             $table->string('correo');
             $table->string('activo');
+            $table->string('imagen');
             $table->timestamps();
         });
     }

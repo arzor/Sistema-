@@ -12,7 +12,7 @@ class CreateCalificacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('calificacion', function (Blueprint $table) {
+        Schema::create('calificacions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->string('reputacion');

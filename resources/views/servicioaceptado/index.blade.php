@@ -16,8 +16,6 @@
  <table class="table table-striped table-bordered table-hover">
      <thead>
      <tr class="bg-info">
-         <th>Nro</th>
-         <th>solicitud</th>
          <th>Tecnico</th>
          <th>Correo</th>
          <th>Telefono</th>
@@ -27,8 +25,6 @@
      <tbody>
      @foreach ($activos as $activo)
          <tr>
-             <td>{{ $activo->id }}</td>
-             <td>{{ $activo->servicio }}</td>
              <td>{{ $activo->name }}</td>
              <td>{{ $activo->correo }}</td>
              <td>{{ $activo->cell_number }}</td>

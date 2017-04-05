@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
 			$table->integer('rol_tec')->default('0');
 			$table->string('cell_number')->nullable();
             $table->string('especialidad');
+            $table->string('image');
             $table->rememberToken();
             $table->timestamps();
         });

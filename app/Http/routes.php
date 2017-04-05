@@ -18,7 +18,6 @@ use App\Calificacion;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
-
 Route::get('/', function () { 
   $users = DB::table('users')->where('rol_tec', '=', 1)->get();
 
@@ -28,8 +27,7 @@ Route::get('/', function () {
 
   $calificacio = DB::table('calificacions')->where('calificacion', '=', 5)->get();
 
-
- 
+  $aceptados = DB::table('calificacions')->where('calificacion', '=', 1)->get();
 
   return view('welcome', compact('users','tecnico','solicitud','calificacio','aceptados','activos'));
 });
@@ -139,3 +137,5 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::resource('solicitudaceptada','SolicitudAceptadaController');
+
+Route::resource('servicioaceptado','ServicioAceptadoController');
